@@ -1,0 +1,22 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    height: 100vh; /* 使body佔滿整個視窗高度 */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-container {
+    /* text-align: left; 讓遊戲內容左對齊 */
+    /* max-width: 600px; 設定最大寬度，避免過寬 */
+    margin: 50px;
+}
+
+button {
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
