@@ -11,10 +11,16 @@
 </head>
 
 <body>
-    <p id="description" onclick="descriptionClicked()"></p>
-    <button id="option1" onclick="optionClicked(1)" style="display:none;"></button>
-    <button id="option2" onclick="optionClicked(2)" style="display:none;"></button>
-    <script src="src/js/main.js"></script>
+    <div id="game-container">
+        <b id="description"></b>
+        <div id="options">
+            <button id="start-scene"></button>
+            <button id="option1"></button>
+            <button id="option2"></button>
+        </div>
+    </div>
+    
+    <script type="module" src="src/js/game.js"></script>
 </body>
 
 </html>
