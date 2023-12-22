@@ -62,7 +62,7 @@ function showScene() {
         return;
     }
     history.add(currentScene.code, currentScene.description);
-    if (currentScene.end != NULL) {
+    if (currentScene.end == "bad_ending") {
         history.badEnding(currentScene.code);
         regretButton
             .on("click", function(event) {
