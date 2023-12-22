@@ -62,13 +62,13 @@ function showScene() {
         return;
     }
     history.add(currentScene.code, currentScene.description);
-    if (currentScene.end == "bad_ending") {
+    if (currentScene.end != NULL) {
         history.badEnding(currentScene.code);
         regretButton
             .on("click", function(event) {
                 event.stopPropagation();
                 regretButton.style("display", "none");
-                gotoScene((parseInt(currentScene.code) - 1).toString());
+                gotoScene(currentScene.end);
             })
             .style("display", "inline-block");
     }
