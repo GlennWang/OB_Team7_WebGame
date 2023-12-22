@@ -13,14 +13,15 @@
 <body id="background">
     <div id="game-container">
         <img src="src/svg/history-svgrepo-com.svg" class="history-btn" id="historyButton">
-        <b class="description" id="description"></b>
-        <div class="flex-center" id="button-content">
-            <button class="btn" id="start">開始遊戲</button>
-            <button class="regret-btn" id="regret">重新選擇</button>
-            <button class="btn" id="option1"></button>
-            <button class="btn" id="option2"></button>
+        <div class="opacity-bg">
+            <b class="description" id="description"></b>
+            <div class="flex-center" id="button-content">
+                <button class="btn" id="start">開始遊戲</button>
+                <button class="regret-btn" id="regret">重新選擇</button>
+                <button class="btn" id="option1"></button>
+                <button class="btn" id="option2"></button>
+            </div>
         </div>
-
         <div class="overlay" id="overlay"></div>
         <div class="popup" id="popup" style="display:none;" onclick="event.stopPropagation()">
             <div class="popup-content" id="popup-content">

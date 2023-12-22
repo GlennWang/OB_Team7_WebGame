@@ -16,7 +16,7 @@ sceneInit();
 
 function sceneInit() {
     history.init();
-    description.text(NULL);
+    description.style("display", "none").text(NULL);
     regretButton.style("display", "none");
     startButton
         .on("click", startGame)
@@ -51,7 +51,6 @@ function startGame() {
         showScene();
         gameContainer.on("click", sceneClicked);
     });
-    description.style("display", "none");
     startButton
         .style("background-color", "#3498db")
         .style("display", "none");

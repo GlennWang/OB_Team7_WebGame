@@ -15,14 +15,13 @@
 }
 
 .description {
-    width: 90%;
+    padding: 10px 5vh;
     font-size: 24px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .flex-center {
-    width: 90%;
+    padding: 10px 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,13 +79,15 @@
 }
 
 .history-btn {
-    width: 25px;
-    height: 35px;
+    width: 40px;
+    height: auto;
     cursor: pointer;
     position: absolute;
     top: 10px;
     left: 10px;
     margin: 0px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25%;
 }
 
 .history-btn:hover {
@@ -122,9 +123,12 @@
 
 .popup-content {
     text-align: center;
-    height: 40vh;
+    height: 60vh;
+    width: auto;
     overflow: auto; /* 允許垂直捲動 */
     border: 1px solid #ccc; /* 可選：添加邊框以更好地顯示區域 */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .popup {
@@ -134,7 +138,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    border-radius: 10px;
     z-index: 1000;
 }
 
@@ -148,4 +151,12 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 999; /* 使 overlay 位於 popup 之前 */
+}
+
+.opacity-bg {
+    width: 90%;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
 }
