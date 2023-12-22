@@ -8,6 +8,7 @@ const regretButton = d3.select("#regret");
 const optionButton1 = d3.select("#option1");
 const optionButton2 = d3.select("#option2");
 const historyButton = d3.select("#historyButton");
+const background = d3.select("#background");
 let scenes;
 let currentScene;
 

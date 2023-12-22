@@ -1,7 +1,9 @@
-body {
+#background {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
+    background: url("../background/b1.jpg");
+    background-size: cover;
 }
 
 #game-container {
