@@ -68,7 +68,7 @@ function showScene() {
             .on("click", function(event) {
                 event.stopPropagation();
                 regretButton.style("display", "none");
-                gotoScene(currentScene.end);
+                gotoScene((parseInt(currentScene.code) - 1).toString());
             })
             .style("display", "inline-block");
     }
