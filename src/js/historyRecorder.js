@@ -52,10 +52,15 @@ const history = {
             .style("background-color", "#ef4343")
             .style("color", "white");
     },
+    happyEnding: function(sceneCode) {
+        content.select("#scene" + sceneCode)
+            .select(".history-message")
+            .style("background-color", "#efec43")
+            .style("color", "black");
+    },
     removeViolation: function(sceneCode) {    
         var violateScene = content.select("#scene" + sceneCode);
 
-        // 如果找到重複的劇情 刪除它以及在它之後的歷史劇情
         if (!violateScene.empty()) {
             const siblings = violateScene.node().parentNode.children;
             const targetIndex = Array.from(siblings).indexOf(violateScene.node());
