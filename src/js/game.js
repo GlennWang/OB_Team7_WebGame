@@ -1,49 +1,76 @@
 const NULL = "";
 const START_GAME = "開始遊戲";
-const RESTART_GAME = "開始遊戲";
+const RESTART_GAME = "重新開始";
 const gameContainer = d3.select("#game-container");
 const description = d3.select("#description");
-const startButton = d3.select("#start-scene");
+const startButton = d3.select("#start");
+const regretButton = d3.select("#regret");
 const optionButton1 = d3.select("#option1");
 const optionButton2 = d3.select("#option2");
+const historyButton = d3.select("#historyButton");
 let scenes;
 let currentScene;
 
 sceneInit();
 
 function sceneInit() {
+    history.init();
     description.text(NULL);
+    regretButton.style("display", "none");
     startButton
         .on("click", startGame)
         .style("display", "inline-block")
         .text(START_GAME);
     optionButton1
-        .on("click", optionClicked.bind(null, 1))
+        .on("click", function(event) {
+            event.stopPropagation();
+            optionClicked(1);
+        })
         .style("display", "none")
         .text(NULL);
     optionButton2
-        .on("click", optionClicked.bind(null, 2))
+        .on("click", function(event) {
+            event.stopPropagation();
+            optionClicked(2);
+        })
         .style("display", "none")
         .text(NULL);
+    historyButton
+        .on("click", function(event) {
+            event.stopPropagation();
+            history.show(); 
+        })
+        .style("display", "none");
 }
 
 function startGame() {
-    description.style("display", "none");
-    startButton
-        .style("background-color", "#3498db")
-        .style("display", "none");
     d3.csv("src/csv/story.csv").then(data => {
         scenes = data;
         currentScene = scenes[0];
         showScene();
         gameContainer.on("click", sceneClicked);
     });
+    description.style("display", "none");
+    startButton
+        .style("background-color", "#3498db")
+        .style("display", "none");
 }
 
 function showScene() {
     if (currentScene == undefined) {
         console.error("Empty scene");
         return;
+    }
+    history.add(currentScene.code, currentScene.description);
+    if (currentScene.end != NULL) {
+        history.badEnding(currentScene.code);
+        regretButton
+            .on("click", function(event) {
+                event.stopPropagation();
+                regretButton.style("display", "none");
+                gotoScene(currentScene.end);
+            })
+            .style("display", "inline-block");
     }
     description
         .style("display", "block")
@@ -54,16 +81,11 @@ function showScene() {
     optionButton2
         .style("display", (currentScene.option2 != NULL) ? "inline-block" : "none")
         .text(currentScene.option2);
-    if (currentScene.end != NULL) {
-        startButton
-            .style("display", "inline-block")
-            .style("background-color", "#f44336")
-            .text("重新開始");
-    }
 }
 
 function gotoScene(sceneIndex) {
     currentScene = scenes.find(line => line.code === sceneIndex);
+    historyButton.style("display", "block");
     showScene();
 }
 
@@ -78,5 +100,6 @@ function optionClicked(option) {
         console.error("No functional click event");
         return;
     }
+    history.selectedOption(currentScene, option);
     gotoScene(currentScene[`option${option}_next`]);
 }

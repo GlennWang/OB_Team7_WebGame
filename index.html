@@ -12,14 +12,42 @@
 
 <body>
     <div id="game-container">
-        <b id="description"></b>
-        <div id="options">
-            <button id="start-scene"></button>
-            <button id="option1"></button>
-            <button id="option2"></button>
+        <img src="src/svg/history-svgrepo-com.svg" class="history-btn" id="historyButton">
+        <b class="description" id="description"></b>
+        <div class="flex-center" id="button-content">
+            <button class="btn" id="start">開始遊戲</button>
+            <button class="regret-btn" id="regret">重新選擇</button>
+            <button class="btn" id="option1"></button>
+            <button class="btn" id="option2"></button>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup" style="display:none;" onclick="event.stopPropagation()">
+            <div class="popup-content" id="popup-content">
+                <div class="row desc-row">
+                    <p>這是一個風和日麗的下午，為了組織行為的小組期中計畫，你/妳擲出了乘載組員們心意的紙飛機，看見紙飛機朝天際飛去，這時，你的眼前突然一黑...</p>
+                </div>
+                <div class="row desc-row">
+                    <p>ssxookskss1</p>
+                </div>
+                <div class="row option-row">
+                    <p>ssxookskss1</p>
+                </div>                <div class="row desc-row">
+                    <p>ssxookskss1</p>
+                </div>
+                <div class="row option-row">
+                    <p>ssxookskss1</p>
+                </div>                <div class="row desc-row">
+                    <p>ssxookskss1</p>
+                </div>
+                <div class="row option-row">
+                    <p>ssxookskss1</p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="src/js/mouseClickAnimation.js"></script> 
+    <script src="src/js/historyRecorder.js"></script>
     <script src="src/js/game.js"></script>
 </body>
 
