@@ -10,16 +10,26 @@
     <title>組織行為 網頁遊戲</title>
 </head>
 
-<body>
+<body id="background">
     <div id="game-container">
-        <b id="description"></b>
-        <div id="options">
-            <button id="start-scene"></button>
-            <button id="option1"></button>
-            <button id="option2"></button>
+        <img src="src/svg/history-svgrepo-com.svg" class="history-btn" id="historyButton" style="display:none;">
+        <div class="opacity-bg">
+            <b class="description" id="description" style="display:none;"></b>
+            <div class="flex-center" id="button-content">
+                <button class="btn" id="start">開始遊戲</button>
+                <button class="reset-btn btn" id="reset" style="display:none;">返回開始畫面</button>
+                <button class="regret-btn btn" id="regret" style="display:none;">重新選擇</button>
+                <button class="btn" id="option1" style="display:none;"></button>
+                <button class="btn" id="option2" style="display:none;"></button>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup" style="display:none;" onclick="event.stopPropagation()">
+            <div class="popup-content" id="popup-content"></div>
         </div>
     </div>
     <script src="src/js/mouseClickAnimation.js"></script> 
+    <script src="src/js/historyRecorder.js"></script>
     <script src="src/js/game.js"></script>
 </body>
 
