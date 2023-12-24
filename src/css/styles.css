@@ -16,7 +16,7 @@
 
 .description {
     padding: 10px 5vh;
-    font-size: 24px;
+    font-size: 30px;
     text-align: center;
     text-shadow: 
         -1px -1px 0 #fff, /* 左上 */
@@ -43,7 +43,7 @@
 
 .btn {
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     background-color: #3498db;
     color: #fff;
@@ -104,7 +104,7 @@
 
 .history-message {
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
