@@ -15,6 +15,7 @@ sceneInit();
 
 function sceneInit() {
     history.init();
+    background.style("background", `url("src/background/b1.jpg")`).style("background-size", "100% 100%");
     d3.select(".opacity-bg").style("background-color", "rgba(255, 255, 255, 0.5)");
     description.style("display", "none").text(NULL);
     regretButton.style("display", "none");
@@ -67,6 +68,9 @@ function showScene() {
     description
         .style("display", "block")
         .text(currentScene.description);
+    background
+        .style("background", (currentScene.img == "default") ? `url("src/background/b1.jpg")` : `url("src/img/${currentScene.img}")`)
+        .style("background-size", "100% 100%");
     if (currentScene.end != NULL) {
         if (currentScene.end == "happy_ending") {
             history.happyEnding(currentScene.code);
