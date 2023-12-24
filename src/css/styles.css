@@ -16,7 +16,7 @@
 
 .description {
     padding: 10px 5vh;
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
     text-shadow: 
         -1px -1px 0 #fff, /* 左上 */
@@ -43,7 +43,7 @@
 
 .btn {
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 28px;
     cursor: pointer;
     background-color: #3498db;
     color: #fff;
@@ -71,12 +71,12 @@
 }
 
 .reset-btn {
-    background-color: #efec43;
+    background-color: #86f9a3;
     color: #000;
 }
 
 .reset-btn:hover {
-    background-color: #dcda5a;
+    background-color: #4cfd5e;
 }
 
 .history-btn {
